@@ -4,6 +4,15 @@
 (function () {
     'use strict';
 
-    angular.module('app', ["ui.router","app.afiliado"]);
+    var app = angular.module('app', ["ui.router","app.cliente","app.afiliado","app.notificacion","app.prestador"]);
+    app.config(config);
 
+    function config($stateProvider, $urlRouterProvider) {
+
+        $stateProvider.state('home', {
+            url: '/'
+        });
+
+        $urlRouterProvider.otherwise('/');
+    }
 }());

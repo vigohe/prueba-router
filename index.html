@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head ng-app="app">
+<head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
-    <script src="bower_components/angular/angular.min.js"></script>
+<body ng-app="app">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Atención Clientes</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="cliente.afiliado">Afiliado</a></li>
+                <li><a ui-sref="cliente.prestador">Prestador</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>INDEX</h1>
+
+        <div ui-view=>View</div>
+        <div ui-view="afiliado">Afiliado....</div>
+        <div ui-view="prestador">Prestador....</div>
+        <div ui-view="notificacion">Notificacion....</div>
+
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/cliente/cliente.module.js"></script>
+    <script src="app/afiliado/afiliado.module.js"></script>
+    <script src="app/prestador/prestador.module.js"></script>
+    <script src="app/notificacion/notificacion.module.js"></script>
+
 </body>
 </html>

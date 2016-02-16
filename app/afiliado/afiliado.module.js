@@ -4,6 +4,33 @@
 (function () {
     'use strict';
 
-    angular.module('app.afiliado', []);
+    var app = angular.module('app.afiliado', []);
+
+    app.config(config);
+
+    function config($stateProvider){
+        $stateProvider.state('cliente.afiliado', {
+            url: '/afiliado/:rut',
+            views: {
+                'afiliado@': {
+                    templateUrl: 'app/afiliado/afiliado.html',
+                    controller: 'AfiliadoController',
+                    controllerAs: 'afiliadoCtrl'
+                }
+            }
+        });
+    }
+
+    app.controller("AfiliadoController", AfiliadoController);
+
+    AfiliadoController.$inject = [];
+
+    function AfiliadoController(){
+        var vm = this;
+        vm.titulo = "AfiliadoController";
+
+        console.log("AfiliadoController");
+
+    }
 
 }());
